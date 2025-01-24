@@ -1,0 +1,159 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #ecf0f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Altura completa de la ventana */
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Evitar scroll */
+}
+
+form {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 650px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    overflow-y: auto; /* Hacer que el formulario sea desplazable en caso necesario */
+    max-height: 90vh; /* Limitar la altura para que quepa en la pantalla */
+}
+
+/* Título del formulario */
+h1 {
+    font-size: 28px;
+    color: #34495e;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Estilo de las etiquetas */
+label {
+    font-size: 14px;
+    color: #7f8c8d;
+    margin-bottom: 8px;
+    display: block;
+    font-weight: 500;
+    margin-top: 15px;
+}
+
+/* Estilo de los campos de entrada */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 15px;
+    border: 2px solid #bdc3c7;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto de enfoque en los campos */
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.5);
+    outline: none;
+}
+
+/* Estilo de los campos de radio y checkbox */
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 8px;
+    accent-color: #3498db;
+}
+
+/* Estilo para el botón de envío */
+input[type="submit"] {
+    background-color: #3498db;
+    color: white;
+    padding: 15px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Efecto de hover en el botón */
+input[type="submit"]:hover {
+    background-color: #2980b9;
+    transform: translateY(-3px);
+}
+
+/* Estilos para los mensajes de error */
+span {
+    font-size: 12px;
+    color: #e74c3c;
+    display: block;
+    margin-top: 5px;
+}
+
+/* Estilo para campos de texto con tamaño personalizado */
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Espaciado entre los campos */
+div {
+    margin-bottom: 20px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    form {
+        padding: 15px;
+        width: 100%;
+        max-width: 90%;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    input[type="submit"] {
+        padding: 14px 28px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    select,
+    textarea {
+        font-size: 14px;
+        padding: 12px 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    input[type="submit"] {
+        padding: 14px 24px;
+    }
+}

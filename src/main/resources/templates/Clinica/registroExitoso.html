@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro Exitoso</title>
+    <link rel="stylesheet" th:href="@{css/registro.css}">
+</head>
+<body>
+<div>
+    <h2>Registro Exitoso</h2>
+    <span>Nombre:</span>
+    <span th:text="${paciente.nombre}"></span>
+    <br>
+    <span>Email:</span>
+    <span th:text="${paciente.email}"></span>
+    <br>
+    <span>Teléfono:</span>
+    <span th:text="${paciente.telefono}"></span>
+    <br>
+    <span>Fecha de Nacimiento:</span>
+    <span th:text="${paciente.fechaNacimiento}"></span>
+    <br>
+    <span>Género:</span>
+    <span th:text="${paciente.genero}"></span>
+    <br>
+    <span>Dirección:</span>
+    <span th:text="${paciente.direccion}"></span>
+    <br>
+
+    <!-- Campos adicionales -->
+    <span>Estado Civil:</span>
+    <span th:text="${paciente.estadoCivil}"></span>
+    <br>
+    <span>Ocupación:</span>
+    <span th:text="${paciente.ocupacion}"></span>
+    <br>
+    <span>Tipo de Sangre:</span>
+    <span th:text="${paciente.tipoSangre}"></span>
+    <br>
+    <span>Nombre del Contacto de Emergencia:</span>
+    <span th:text="${paciente.contactoEmergencia}"></span>
+    <br>
+    <span>Teléfono del Contacto de Emergencia:</span>
+    <span th:text="${paciente.telefonoEmergencia}"></span>
+    <br>
+    <span>Antecedentes Médicos:</span>
+    <span th:text="${paciente.antecedentesMedicos}"></span>
+    <br>
+    <span>¿Tiene alguna Discapacidad?</span>
+    <span th:text="${paciente.discapacidad ? 'Sí' : 'No'}"></span>
+    <br>
+    <span>Nombre del Médico Tratante:</span>
+    <span th:text="${paciente.medicoTratante}"></span>
+    <br>
+    <span>Observaciones Adicionales:</span>
+    <span th:text="${paciente.observaciones}"></span>
+    <br>
+</div>
+</body>
+</html>

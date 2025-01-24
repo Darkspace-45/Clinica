@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Paciente</title>
+    <link rel="stylesheet" th:href="@{css/formulario.css}">
+</head>
+<body>
+<div>
+    <h1>Formulario de Registro de Paciente</h1>
+    <form th:action="@{/enviarDatos}" method="post" th:object="${paciente}">
+        <div>
+            <label>Nombre:</label>
+            <input type="text" th:field="*{nombre}" minlength="2" maxlength="50" required>
+            <br>
+            <span th:errors="*{nombre}">Error en el nombre</span>
+        </div>
+        <div>
+            <label>Email:</label>
+            <input type="email" th:field="*{email}" required>
+            <br>
+            <span th:errors="*{email}">Error en el email</span>
+        </div>
+        <div>
+            <label>Teléfono:</label>
+            <input type="tel" th:field="*{telefono}" pattern="\d{10}" required>
+            <br>
+            <span th:errors="*{telefono}">Debe ser un número de 10 dígitos</span>
+        </div>
+        <div>
+            <label>Fecha de nacimiento:</label>
+            <input type="date" th:field="*{fechaNacimiento}" max="2025-01-01" required>
+            <br>
+            <span th:errors="*{fechaNacimiento}">Error en la fecha de nacimiento</span>
+        </div>
+        <div>
+            <label>Género:</label>
+            <input type="radio" value="Masculino" th:field="*{genero}" required>Masculino
+            <input type="radio" value="Femenino" th:field="*{genero}" required>Femenino
+            <br>
+            <span th:errors="*{genero}">Seleccione un género</span>
+        </div>
+        <div>
+            <label>Dirección:</label>
+            <textarea rows="3" cols="30" th:field="*{direccion}" minlength="5" maxlength="100" required></textarea>
+            <br>
+            <span th:errors="*{direccion}">Error en la dirección</span>
+        </div>
+        <div>
+            <label>Alergias:</label>
+            <input type="text" th:field="*{alergias}" maxlength="100">
+            <br>
+            <span th:errors="*{alergias}">Máximo 100 caracteres</span>
+        </div>
+
+        <!-- Campos adicionales -->
+        <div>
+            <label>Estado Civil:</label>
+            <select th:field="*{estadoCivil}">
+                <option value="Soltero">Soltero</option>
+                <option value="Casado">Casado</option>
+                <option value="Divorciado">Divorciado</option>
+                <option value="Viudo">Viudo</option>
+            </select>
+            <br>
+            <span th:errors="*{estadoCivil}">Seleccione un estado civil</span>
+        </div>
+        <div>
+            <label>Ocupación:</label>
+            <input type="text" th:field="*{ocupacion}" maxlength="50">
+            <br>
+            <span th:errors="*{ocupacion}">Error en la ocupación</span>
+        </div>
+        <div>
+            <label>Tipo de sangre:</label>
+            <input type="text" th:field="*{tipoSangre}" maxlength="10">
+            <br>
+            <span th:errors="*{tipoSangre}">Máximo 10 caracteres</span>
+        </div>
+        <div>
+            <label>Nombre del contacto de emergencia:</label>
+            <input type="text" th:field="*{contactoEmergencia}" maxlength="50">
+            <br>
+            <span th:errors="*{contactoEmergencia}">Error en el nombre del contacto de emergencia</span>
+        </div>
+        <div>
+            <label>Teléfono del contacto de emergencia:</label>
+            <input type="tel" th:field="*{telefonoEmergencia}" pattern="\d{10}" required>
+            <br>
+            <span th:errors="*{telefonoEmergencia}">Debe ser un número de 10 dígitos</span>
+        </div>
+        <div>
+            <label>Antecedentes médicos:</label>
+            <textarea rows="3" cols="30" th:field="*{antecedentesMedicos}" maxlength="200"></textarea>
+            <br>
+            <span th:errors="*{antecedentesMedicos}">Máximo 200 caracteres</span>
+        </div>
+        <div>
+            <label>¿Tiene alguna discapacidad?</label>
+            <input type="checkbox" th:field="*{discapacidad}">
+            <br>
+            <span th:errors="*{discapacidad}">Seleccione si tiene alguna discapacidad</span>
+        </div>
+        <div>
+            <label>Nombre del médico tratante:</label>
+            <input type="text" th:field="*{medicoTratante}" maxlength="50">
+            <br>
+            <span th:errors="*{medicoTratante}">Error en el nombre del médico tratante</span>
+        </div>
+        <div>
+            <label>Observaciones adicionales:</label>
+            <textarea rows="3" cols="30" th:field="*{observaciones}" maxlength="200"></textarea>
+            <br>
+            <span th:errors="*{observaciones}">Máximo 200 caracteres</span>
+        </div>
+
+        <div>
+            <input type="submit" value="Registrar">
+        </div>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo general para el body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Contenedor principal */
+.container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 800px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Título principal */
+h2 {
+    font-size: 28px;
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+/* Estilo para la sección de información */
+.info p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #34495e;
+    margin-bottom: 12px;
+}
+
+/* Estilo para las etiquetas en negrita */
+strong {
+    font-weight: 600;
+    color: #2980b9;
+}
+
+/* Estilo para los valores (fuente normal) */
+span {
+    color: #7f8c8d;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        max-width: 90%;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .info p {
+        font-size: 14px;
+    }
+}
